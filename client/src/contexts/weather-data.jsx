@@ -3,14 +3,14 @@ import React, { createContext, useContext, useReducer } from 'react';
 const initialValue = {
   isLoading: false,
   error: false,
-  gloomScore: 42,
+  gloomScore: null,
   weatherData: {},
 };
 
 const reducer = (state = initialValue, action) => {
   switch (action.type) {
     case 'FETCH_DATA_INIT':
-      return { isLoading: true };
+      return { ...initialValue, isLoading: true };
     case 'FETCH_DATA_REQUEST_SUCCESS':
       return {
         isLoading: false,

@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const axios = require("axios");
@@ -8,7 +9,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.get("/api/weather", async (req, res) => {
   try {
     const { data } = await axios.get(
-      `https://api.darksky.net/forecast/edd1946cf14e6dacd8393c0187102bd4/${req.query.latlng}`
+      `https://api.darksky.net/forecast/${process.env.DARKSKY_API_KEY}/${req.query.latlng}`
     );
     res.json(data);
   } catch (err) {
