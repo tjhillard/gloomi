@@ -65,16 +65,28 @@ export const WeatherDataSearchForm = () => {
   return (
     <form onSubmit={handleFormSubmit} disabled={state.isLoading}>
       <div className="recommendations">
-        <a onClick={() => handleRecommendationSelected(47.602, -122.3321)}>
+        <a
+          role="button"
+          onClick={() => handleRecommendationSelected(47.602, -122.3321)}
+        >
           Seattle
         </a>
-        <a onClick={() => handleRecommendationSelected(25.033, 121.5654)}>
+        <a
+          role="button"
+          onClick={() => handleRecommendationSelected(25.033, 121.5654)}
+        >
           Taipei
         </a>
-        <a onClick={() => handleRecommendationSelected(51.5074, -0.1278)}>
+        <a
+          role="button"
+          onClick={() => handleRecommendationSelected(51.5074, -0.1278)}
+        >
           London
         </a>
-        <a onClick={() => handleRecommendationSelected(64.1466, -21.9426)}>
+        <a
+          role="button"
+          onClick={() => handleRecommendationSelected(64.1466, -21.9426)}
+        >
           Reykjavik
         </a>
       </div>

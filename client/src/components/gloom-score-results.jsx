@@ -1,4 +1,5 @@
 import React from 'react';
+import { ExternalLink } from './external-link';
 
 export function GloomScoreResults({ latitude, longitude, gloomScore }) {
   return (
@@ -7,12 +8,12 @@ export function GloomScoreResults({ latitude, longitude, gloomScore }) {
         <>
           <span>
             Gloom Score™ for{' '}
-            <a
+            <ExternalLink
               href={`https://www.openstreetmap.org/#map=14/${latitude}/${longitude}`}
               target="_blank"
             >
               ({latitude.toFixed(2)}, {longitude.toFixed(2)})
-            </a>
+            </ExternalLink>
             :
           </span>
           <strong>{gloomScore}</strong>

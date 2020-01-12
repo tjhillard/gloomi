@@ -23,6 +23,11 @@ h2 {
   font-size: 0.95rem;
 }
 
+p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
 a {
   color: #b48ead;
 }
@@ -65,6 +70,10 @@ button {
   min-height: 40px;
 }
 
+button:hover {
+  opacity: 0.9;
+}
+
 button:disabled {
   cursor: not-allowed;
 }
@@ -90,7 +99,7 @@ button:disabled {
 .recommendations {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 4px;
+  margin: 4px 0;
 }
 
 .recommendations a:hover {

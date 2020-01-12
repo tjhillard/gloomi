@@ -4,8 +4,8 @@ export function calculateGloomScore({
   precipitationIntensity, // rainfall amount (higher the gloomier)
   visibility, // 0-10 miles (lower the gloomier)
 }) {
-  const cloudCoverScore = cloudCover * 100; // 100 weight
-  const precipitationIntensityScore = precipitationIntensity * 50; // ~50 weight
+  const cloudCoverScore = cloudCover * 100;
+  const precipitationIntensityScore = precipitationIntensity * 50;
   const visibilityScore = (10 - visibility) * 5;
   const tempScore = temp < 55 ? 20 : 0;
   return (
