@@ -1,7 +1,7 @@
 export function calculateGloomScore({
   temp, // smaller the gloomier
   cloudCover, // 0-1 percentage of sky covered in clouds (higher the gloomier)
-  precipitationIntensity, // inches rain fall (higher the gloomier)
+  precipitationIntensity, // rainfall amount (higher the gloomier)
   visibility, // 0-10 miles (lower the gloomier)
 }) {
   const cloudCoverScore = cloudCover * 100; // 100 weight

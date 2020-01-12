@@ -8,7 +8,7 @@ export function GloomScoreResults({ latitude, longitude, gloomScore }) {
           <span>
             Gloom Score™ for{' '}
             <a
-              href={`https://www.openstreetmap.org/#map=14/${latitude},${longitude}`}
+              href={`https://www.openstreetmap.org/#map=14/${latitude}/${longitude}`}
               target="_blank"
             >
               ({latitude.toFixed(2)}, {longitude.toFixed(2)})
@@ -16,6 +16,7 @@ export function GloomScoreResults({ latitude, longitude, gloomScore }) {
             :
           </span>
           <strong>{gloomScore}</strong>
+          <span>(higher the gloomier)</span>
         </>
       )}
     </div>
