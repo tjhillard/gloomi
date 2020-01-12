@@ -25,16 +25,16 @@ const reducer = (state = initialValue, action) => {
 };
 
 const WeatherDataContext = createContext();
-const WeatherDataDispactContext = createContext();
+const WeatherDataDispatchContext = createContext();
 
 export const WeatherDataProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialValue);
 
   return (
     <WeatherDataContext.Provider value={state}>
-      <WeatherDataDispactContext.Provider value={dispatch}>
+      <WeatherDataDispatchContext.Provider value={dispatch}>
         {children}
-      </WeatherDataDispactContext.Provider>
+      </WeatherDataDispatchContext.Provider>
     </WeatherDataContext.Provider>
   );
 };
@@ -42,6 +42,6 @@ export const WeatherDataProvider = ({ children }) => {
 export function useWeatherData() {
   return [
     useContext(WeatherDataContext),
-    useContext(WeatherDataDispactContext),
+    useContext(WeatherDataDispatchContext),
   ];
 }

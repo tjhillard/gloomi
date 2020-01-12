@@ -8,7 +8,7 @@ function App() {
   return (
     <WeatherDataProvider>
       <div className="app">
-        <img src={Logo} alt="Rainingn Cloud" height="125px" width="125px" />
+        <img src={Logo} alt="Raining Cloud" height="125px" width="125px" />
         <h1>Gloomi</h1>
         <p>Quantifies gloominess based on current weather conditions.</p>
         <WeatherDataSearchForm />
