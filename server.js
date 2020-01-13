@@ -13,7 +13,10 @@ app.get("/api/weather", async (req, res) => {
     );
     res.json(data);
   } catch (err) {
-    res.status(400).json(err);
+    console.error(`API Error: ${err.response.data}`);
+    res
+      .status(400)
+      .json(err.response && err.response.data ? err.response.data : err);
   }
 });
 

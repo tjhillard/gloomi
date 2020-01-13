@@ -31,10 +31,16 @@ export const WeatherDataSearchForm = () => {
         gloomScore,
       });
     } catch (err) {
-      dispatch({ type: 'FETCH_DATA_REQUEST_ERROR' });
-      alert(
-        'There was an error calculating the gloom score for the provided coordinates.'
-      );
+      console.error(err.response.data);
+      const errorMessage =
+        (err.response && err.response.data && err.response.data.error) ||
+        'An unknown error occurred. Please refresh and try again.';
+      dispatch({
+        type: 'FETCH_DATA_REQUEST_ERROR',
+        error: true,
+        errorMessage,
+      });
+      alert(`Error: ${errorMessage}`);
     }
   }
 

@@ -3,6 +3,7 @@ import React, { createContext, useContext, useReducer } from 'react';
 const initialValue = {
   isLoading: false,
   error: false,
+  errorMessage: null,
   gloomScore: null,
   weatherData: {},
 };
@@ -18,7 +19,12 @@ const reducer = (state = initialValue, action) => {
         gloomScore: action.gloomScore,
       };
     case 'FETCH_DATA_REQUEST_ERROR':
-      return { isLoading: false, error: true };
+      return {
+        ...initialValue,
+        isLoading: false,
+        error: true,
+        errorMessage: action.errorMessage,
+      };
     default:
       return {};
   }
