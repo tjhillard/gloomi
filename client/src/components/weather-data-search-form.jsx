@@ -38,7 +38,7 @@ export const WeatherDataSearchForm = () => {
     }
   }
 
-  async function handleFormSubmit(event) {
+  function handleFormSubmit(event) {
     event.preventDefault();
     calculate();
   }
