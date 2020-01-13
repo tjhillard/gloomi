@@ -1,5 +1,7 @@
 # Gloomi
 
+![pic](https://i.gyazo.com/e53073718d093fcd9995ee691d2bc7a7.png)
+
 ## Running Locally
 
 ```
