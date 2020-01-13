@@ -28,7 +28,8 @@ p {
   font-size: 0.9rem;
 }
 
-a {
+a,
+.link-button {
   color: #b48ead;
 }
 
@@ -99,10 +100,20 @@ button:disabled {
 .recommendations {
   display: flex;
   justify-content: space-between;
-  margin: 4px 0;
+  margin-top: 4px;
 }
 
-.recommendations a:hover {
+.link-button {
+  background-color: transparent;
+  border: none;
   cursor: pointer;
   text-decoration: underline;
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+.link-button:hover,
+.link-button:focus {
+  text-decoration: none;
 }

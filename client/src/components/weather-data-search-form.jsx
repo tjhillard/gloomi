@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import RECOMMENDED_LOCATIONS from '../constants/recommendations';
 import { useWeatherData } from '../contexts/weather-data';
 import { fetchWeatherData } from '../api/fetch-weather-data';
 import { calculateGloomScore } from '../utils/calculate-gloom-score';
@@ -63,32 +64,19 @@ export const WeatherDataSearchForm = () => {
   }
 
   return (
-    <form onSubmit={handleFormSubmit} disabled={state.isLoading}>
+    <form onSubmit={handleFormSubmit} disabled={isLoading}>
       <div className="recommendations">
-        <a
-          role="button"
-          onClick={() => handleRecommendationSelected(47.602, -122.3321)}
-        >
-          Seattle
-        </a>
-        <a
-          role="button"
-          onClick={() => handleRecommendationSelected(25.033, 121.5654)}
-        >
-          Taipei
-        </a>
-        <a
-          role="button"
-          onClick={() => handleRecommendationSelected(51.5074, -0.1278)}
-        >
-          London
-        </a>
-        <a
-          role="button"
-          onClick={() => handleRecommendationSelected(64.1466, -21.9426)}
-        >
-          Reykjavik
-        </a>
+        {RECOMMENDED_LOCATIONS.map(location => (
+          <button
+            type="button"
+            className="link-button"
+            onClick={() =>
+              handleRecommendationSelected(location.lat, location.lng)
+            }
+          >
+            {location.city}
+          </button>
+        ))}
       </div>
 
       <div className="inputs">
