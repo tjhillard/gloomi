@@ -4,6 +4,20 @@
 
 ## Running Locally
 
+1. Install dependencies
+
+```
+npm install && cd client && npm install
+```
+
+2. Create `.env` in project root and populate following key:
+
+```
+DARKSKY_API_KEY
+```
+
+3. Run servers
+
 ```
 npm run start
 ```
