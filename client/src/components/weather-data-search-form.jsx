@@ -70,6 +70,7 @@ export const WeatherDataSearchForm = () => {
           <button
             type="button"
             className="link-button"
+            key={location.city}
             onClick={() =>
               handleRecommendationSelected(location.lat, location.lng)
             }
@@ -99,10 +100,10 @@ export const WeatherDataSearchForm = () => {
         type="button"
         onClick={useUserLocation}
       >
-        🌎 Use My Location
+        <span role="img">🌎</span> Use My Location
       </Button>
       <Button isLoading={isLoading} className="calculate-btn" type="submit">
-        🌧 Calculate
+        <span role="img">🌧</span> Calculate
       </Button>
 
       <GloomScoreResults
